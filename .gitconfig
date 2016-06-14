@@ -1,0 +1,7 @@
+[user]
+	email = github@gpiantoni.com
+	name = Gio on Arch
+
+[alias]
+    tree = log --graph --decorate --pretty=oneline --abbrev-commit
+    wdiff = diff --color-words -w
