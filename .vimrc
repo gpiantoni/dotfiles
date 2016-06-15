@@ -9,12 +9,12 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'tpope/vim-fugitive'
-Plugin 'klen/python-mode'
+Plugin 'scrooloose/syntastic'
+Plugin 'davidhalter/jedi-vim'
+Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 
-" Plugin 'scrooloose/syntastic'
-" Plugin 'valloric/youcompleteme'
-" Plugin 'bling/vim-airline'
-" Plugin 'vim-airline/vim-airline-themes'
+Plugin 'majutsushi/tagbar'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -30,6 +30,10 @@ filetype plugin indent on    " required
 syntax on
 " Line numbers
 set number
+set relativenumber
+
+" line at 80
+set colorcolumn=80
 
 " colorscheme
 colorscheme evening
@@ -38,17 +42,33 @@ colorscheme evening
 set encoding=utf-8
 
 " Default options for syntastic
-" set statusline+=%#warningmsg#
-" set statusline+=%{SyntasticStatuslineFlag()}
-" set statusline+=%*
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
 
-" let g:syntastic_always_populate_loc_list = 1
-" let g:syntastic_auto_loc_list = 1
-" let g:syntastic_check_on_open = 1
-" let g:syntastic_check_on_wq = 0
+let g:syntastic_always_populate_loc_list = 0
+let g:syntastic_auto_loc_list = 0
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 " keep location list small
-" let g:syntastic_loc_list_height = 5
+let g:syntastic_loc_list_height = 5
 
 " disable several syntastic flake8 errors
 " (disables "too long lines", "2 spaces before function def")
-" let g:syntastic_python_flake8_post_args='--ignore=E302,E501'
+let g:syntastic_python_flake8_post_args='--ignore=E302,E501'
+
+" tagbar
+nmap <F8> :TagbarToggle<CR>
+
+" vim-jedi, hide top-window with doc
+let g:jedi#show_call_signatures = "2"
+
+" remove trailing whitespaces
+fun! <SID>StripTrailingWhitespaces()
+    let l = line(".")
+    let c = col(".")
+    %s/\s\+$//e
+    call cursor(l, c)
+endfun
+
+autocmd FileType python autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
