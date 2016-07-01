@@ -1,0 +1,6 @@
+--langdef=markdown
+--langmap=markdown:.mkd
+--regex-markdown=/^#[ \t]+(.*)/\1/h,Title/
+--regex-markdown=/^##[ \t]+(.*)/\1/i,Section/
+--regex-markdown=/^### Figure[ \t]+\[\+(.*)\]/\1/k,Figure/
+--regex-markdown=/^###[ \t]+(.*)/\1/j,Subsection/

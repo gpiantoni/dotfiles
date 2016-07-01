@@ -32,8 +32,14 @@ syntax on
 set number
 set relativenumber
 
+" spell check for markdown
+autocmd BufRead,BufNewFile *.md setlocal spell
+" no spell check for words with underscore (i.e. references)
+syn match String /\w\+_\w\+/ contains=@NoSpell
+
 " line at 80
-set colorcolumn=80
+set colorcolumn=
+autocmd FileType python setlocal colorcolumn=80
 
 " colorscheme
 colorscheme evening
@@ -57,8 +63,26 @@ let g:syntastic_loc_list_height = 5
 " (disables "too long lines", "2 spaces before function def")
 let g:syntastic_python_flake8_post_args='--ignore=E302,E501'
 
-" tagbar
+" TAGBAR:
 nmap <F8> :TagbarToggle<CR>
+
+" TAGBAR: for md, show headings
+let g:tagbar_type_markdown = {
+    \ 'ctagstype' : 'markdown',
+    \ 'sort': 0,
+    \ 'kinds' : [
+        \ 'h:Heading1',
+        \ 'i:Heading2',
+        \ 'j:Heading3',
+        \ 'k:Figure'
+    \ ]
+\ }
+
+" TAGBAR: hide the help part at the top
+let g:tagbar_compact = 1
+
+" TAGBAR: show it automatically for supported files
+autocmd VimEnter * nested :call tagbar#autoopen(1)
 
 " vim-jedi, hide top-window with doc
 let g:jedi#show_call_signatures = "2"
