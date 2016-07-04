@@ -32,10 +32,13 @@ syntax on
 set number
 set relativenumber
 
+" nice word wrap (TODO: only markdown)
+set linebreak
+
 " spell check for markdown
 autocmd BufRead,BufNewFile *.md setlocal spell
 " no spell check for words with underscore (i.e. references)
-syn match String /\w\+_\w\+/ contains=@NoSpell
+syntax match String /\w\+_\w\+/ contains=@NoSpell
 
 " line at 80
 set colorcolumn=
@@ -96,3 +99,4 @@ fun! <SID>StripTrailingWhitespaces()
 endfun
 
 autocmd FileType python autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
+
