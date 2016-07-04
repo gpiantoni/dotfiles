@@ -38,7 +38,7 @@ set linebreak
 " spell check for markdown
 autocmd BufRead,BufNewFile *.md setlocal spell
 " no spell check for words with underscore (i.e. references)
-syntax match String /\w\+_\w\+/ contains=@NoSpell
+autocmd BufRead,BufNewFile *.md syntax match String /\w\+_\w\+/ contains=@NoSpell
 
 " line at 80
 set colorcolumn=
