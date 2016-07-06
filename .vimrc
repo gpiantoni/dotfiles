@@ -35,6 +35,9 @@ set relativenumber
 " nice word wrap (TODO: only markdown)
 set linebreak
 
+" h l continues on the previous and next line
+set whichwrap+=h,l
+
 " spell check for markdown
 autocmd BufRead,BufNewFile *.md setlocal spell
 " no spell check for words with underscore (i.e. references)
