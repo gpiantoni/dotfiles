@@ -1,5 +1,6 @@
-*
+# swap
+[._]*.s[a-w][a-z]
+[._]s[a-w][a-z]
 
-!.gitignore
-!.ssh/config
-!.vimrc
+# auto-generated tag files
+tags
