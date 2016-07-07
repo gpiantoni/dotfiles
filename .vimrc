@@ -23,35 +23,42 @@ filetype plugin indent on    " required
 " Brief help
 " :PluginList       - lists configured plugins
 " :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
 " :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
 "
 " Put your non-Plugin stuff after this line
 syntax on
+
+" Set encoding
+set encoding=utf-8
+
+" shortcuts
+noremap <space> :
+let mapleader=","
+
 " Line numbers
 set number
 set relativenumber
 
-" nice word wrap (TODO: only markdown)
-set linebreak
+set colorcolumn=
 
 " h l continues on the previous and next line
 set whichwrap+=h,l
+
+" colorscheme
+colorscheme evening
+
+" MARKDOWN
+" nice word wrap
+autocmd BufRead,BufNewFile *.md set linebreak
 
 " spell check for markdown
 autocmd BufRead,BufNewFile *.md setlocal spell
 " no spell check for words with underscore (i.e. references)
 autocmd BufRead,BufNewFile *.md syntax match String /\w\+_\w\+/ contains=@NoSpell
 
+" PYTHON
 " line at 80
-set colorcolumn=
 autocmd FileType python setlocal colorcolumn=80
-
-" colorscheme
-colorscheme evening
-
-" Set encoding
-set encoding=utf-8
 
 " Default options for syntastic
 set statusline+=%#warningmsg#
@@ -91,8 +98,11 @@ let g:tagbar_compact = 1
 autocmd VimEnter * nested :call tagbar#autoopen(1)
 
 " vim-jedi, hide top-window with doc
-let g:jedi#show_call_signatures = "2"
+let g:jedi#show_call_signatures = 2
+let g:jedi#use_tabs_not_buffers = 1
+let g:jedi#smart_auto_mappings = 0
 
+" FUNCTIONS
 " remove trailing whitespaces
 fun! <SID>StripTrailingWhitespaces()
     let l = line(".")
