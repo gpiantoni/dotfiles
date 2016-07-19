@@ -8,13 +8,15 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
-Plugin 'tpope/vim-fugitive'
-Plugin 'scrooloose/syntastic'
 Plugin 'davidhalter/jedi-vim'
-Plugin 'bling/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
+Plugin 'scrooloose/syntastic'
 
 Plugin 'majutsushi/tagbar'
+
+Plugin 'tpope/vim-fugitive'
+
+Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -31,9 +33,16 @@ syntax on
 " Set encoding
 set encoding=utf-8
 
-" shortcuts
+" SHORTCUTS
 noremap <space> :
 let mapleader=","
+nnoremap <CR> o<Esc>
+
+" edit vim
+nnoremap <leader>ev :tabe MYVIMRC<cr>
+" source vim
+nnoremap <leader>sv :source $MYVIMRC<cr>
+
 
 " Line numbers
 set number
@@ -84,11 +93,9 @@ let g:tagbar_type_markdown = {
     \ 'ctagstype' : 'markdown',
     \ 'sort': 0,
     \ 'kinds' : [
-        \ 'h:Heading1',
-        \ 'i:Heading2',
-        \ 'j:Heading3',
-        \ 'k:Figure'
-    \ ]
+        \ 'h:Title',
+        \ 'i:Sections',
+    \ ],
 \ }
 
 " TAGBAR: hide the help part at the top
@@ -112,4 +119,3 @@ fun! <SID>StripTrailingWhitespaces()
 endfun
 
 autocmd FileType python autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
-

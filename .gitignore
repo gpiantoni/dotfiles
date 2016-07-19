@@ -1,6 +1,11 @@
-# swap
+# vim swap
 [._]*.s[a-w][a-z]
 [._]s[a-w][a-z]
 
 # auto-generated tag files
 tags
+
+# python
+__pycache__/
+*.egg-info/
+
