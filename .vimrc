@@ -10,12 +10,14 @@ Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'davidhalter/jedi-vim'
 Plugin 'scrooloose/syntastic'
+Plugin 'ervandew/supertab'
 
+" Plugin 'vim-pandoc/vim-pandoc'
+" Plugin 'vim-pandoc/vim-pandoc-syntax'
 Plugin 'majutsushi/tagbar'
-
 Plugin 'tpope/vim-fugitive'
 
-Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 
 " All of your Plugins must be added before the following line
@@ -29,6 +31,9 @@ filetype plugin indent on    " required
 "
 " Put your non-Plugin stuff after this line
 syntax on
+" always show the statusbar (for airline to work)
+set laststatus=2
+autocmd VimEnter * AirlineToggleWhitespace
 
 " Set encoding
 set encoding=utf-8
@@ -39,10 +44,9 @@ let mapleader=","
 nnoremap <CR> o<Esc>
 
 " edit vim
-nnoremap <leader>ev :tabe MYVIMRC<cr>
+nnoremap <leader>ev :tabe $MYVIMRC<cr>
 " source vim
 nnoremap <leader>sv :source $MYVIMRC<cr>
-
 
 " Line numbers
 set number
@@ -57,11 +61,6 @@ set whichwrap+=h,l
 colorscheme evening
 
 " MARKDOWN
-" nice word wrap
-autocmd BufRead,BufNewFile *.md set linebreak
-
-" spell check for markdown
-autocmd BufRead,BufNewFile *.md setlocal spell
 " no spell check for words with underscore (i.e. references)
 autocmd BufRead,BufNewFile *.md syntax match String /\w\+_\w\+/ contains=@NoSpell
 
@@ -88,16 +87,6 @@ let g:syntastic_python_flake8_post_args='--ignore=E302,E501'
 " TAGBAR:
 nmap <F8> :TagbarToggle<CR>
 
-" TAGBAR: for md, show headings
-let g:tagbar_type_markdown = {
-    \ 'ctagstype' : 'markdown',
-    \ 'sort': 0,
-    \ 'kinds' : [
-        \ 'h:Title',
-        \ 'i:Sections',
-    \ ],
-\ }
-
 " TAGBAR: hide the help part at the top
 let g:tagbar_compact = 1
 
@@ -119,3 +108,9 @@ fun! <SID>StripTrailingWhitespaces()
 endfun
 
 autocmd FileType python autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
+
+let g:SuperTabDefaultCompletionType = "context"
+let g:SuperTabContextDefaultCompletionType = "<c-x><c-o>"
+let g:pandoc#modules#disabled = ["folding", "chdir", "hypertext"]
+let g:pandoc#toc#close_after_navigating = 0
+let g:pandoc#biblio#bibs = ['/home/gio/Documents/articles/package/md2docx/var/bib/library_fixed.bib']
