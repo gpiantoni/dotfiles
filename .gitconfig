@@ -3,7 +3,7 @@
 	name = Gio on Arch
 
 [alias]
-	tree = log --graph --decorate --pretty=oneline --abbrev-commit
+	tree = log --graph --decorate --pretty=oneline --abbrev-commit --all
 	wdiff = diff --color-words -w
 
 [core]
