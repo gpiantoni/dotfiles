@@ -57,6 +57,11 @@ set relativenumber
 
 set colorcolumn=
 
+" make tab appear as two spaces
+set tabstop=2
+" insert one tab at the time
+set shiftwidth=1
+
 " h l continues on the previous and next line
 set whichwrap+=h,l
 
@@ -112,8 +117,14 @@ endfun
 
 autocmd FileType python autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
 
+" open epub as zip files
+autocmd BufReadCmd *.epub,*.kepub call zip#Browse(expand("<amatch>"))
+
 let g:SuperTabDefaultCompletionType = "context"
 let g:SuperTabContextDefaultCompletionType = "<c-x><c-o>"
 let g:pandoc#modules#disabled = ["folding", "chdir", "hypertext"]
 let g:pandoc#toc#close_after_navigating = 0
 let g:pandoc#biblio#bibs = ['/home/gio/Documents/articles/package/md2docx/var/bib/library_fixed.bib']
+
+" TO CLEANUP XML: %s/></>\r</g
+" THEN: gg=G
