@@ -89,8 +89,8 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_loc_list_height = 5
 
 " disable several syntastic flake8 errors
-" (disables "too long lines", "2 spaces before function def")
-let g:syntastic_python_flake8_post_args='--ignore=E302,E501'
+" (disables "too long lines", "2 spaces before function def", "indent")
+let g:syntastic_python_flake8_post_args='--ignore=E302,E501,E123'
 
 " TAGBAR:
 nmap <F8> :TagbarToggle<CR>
