@@ -12,8 +12,8 @@ Plugin 'davidhalter/jedi-vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'ervandew/supertab'
 
-" Plugin 'vim-pandoc/vim-pandoc'
-" Plugin 'vim-pandoc/vim-pandoc-syntax'
+Plugin 'vim-pandoc/vim-pandoc'
+Plugin 'vim-pandoc/vim-pandoc-syntax'
 Plugin 'majutsushi/tagbar'
 Plugin 'tpope/vim-fugitive'
 
@@ -42,6 +42,9 @@ set encoding=utf-8
 noremap <space> :
 let mapleader=","
 nnoremap <CR> o<Esc>
+
+" select and char/word count
+vnoremap <leader>m g<C-g>:<C-U>echo v:statusmsg<CR>
 
 " edit vim
 nnoremap <leader>ev :tabe $MYVIMRC<cr>
