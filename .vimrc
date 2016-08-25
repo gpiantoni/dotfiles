@@ -68,6 +68,10 @@ set whichwrap+=h,l
 " colorscheme
 colorscheme evening
 
+" folding
+set foldmethod=indent
+set foldlevel=1
+
 " MARKDOWN
 " no spell check for words with underscore (i.e. references)
 autocmd BufRead,BufNewFile *.md syntax match String /\w\+_\w\+/ contains=@NoSpell
