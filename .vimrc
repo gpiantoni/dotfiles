@@ -71,6 +71,7 @@ colorscheme evening
 " folding
 set foldmethod=indent
 set foldlevel=1
+set nofoldenable
 
 " MARKDOWN
 " no spell check for words with underscore (i.e. references)
@@ -126,7 +127,7 @@ autocmd BufReadCmd *.epub,*.kepub call zip#Browse(expand("<amatch>"))
 
 let g:SuperTabDefaultCompletionType = "context"
 let g:SuperTabContextDefaultCompletionType = "<c-x><c-o>"
-let g:pandoc#modules#disabled = ["folding", "chdir", "hypertext"]
+let g:pandoc#modules#disabled = ["chdir", "hypertext"]
 let g:pandoc#toc#close_after_navigating = 0
 let g:pandoc#biblio#bibs = ['/home/gio/Documents/articles/package/md2docx/var/bib/library_fixed.bib']
 
