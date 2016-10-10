@@ -77,6 +77,10 @@ set nofoldenable
 " no spell check for words with underscore (i.e. references)
 autocmd BufRead,BufNewFile *.md syntax match String /\w\+_\w\+/ contains=@NoSpell
 
+" MARKDOWN
+" no spell check for words with underscore (i.e. references)
+autocmd BufRead,BufNewFile *.cls setfiletype=tex
+
 " PYTHON
 " line at 80
 autocmd FileType python setlocal colorcolumn=80
