@@ -77,8 +77,8 @@ set nofoldenable
 " no spell check for words with underscore (i.e. references)
 autocmd BufRead,BufNewFile *.md syntax match String /\w\+_\w\+/ contains=@NoSpell
 
-" MARKDOWN
-" no spell check for words with underscore (i.e. references)
+" LATEX CLS FILES
+" latex cls files should have tex syntax
 autocmd BufRead,BufNewFile *.cls setfiletype=tex
 
 " PYTHON
@@ -96,9 +96,12 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 " keep location list small
 let g:syntastic_loc_list_height = 5
+let g:syntastic_python_checkers = ['python', 'pyflakes']
 
 " disable several syntastic flake8 errors
-" (disables "too long lines", "2 spaces before function def", "indent")
+" E302: too long lines
+" E501: 2 spaces before function def
+" E123: indent
 let g:syntastic_python_flake8_post_args='--ignore=E302,E501,E123'
 
 " TAGBAR:
