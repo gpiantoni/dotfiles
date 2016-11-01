@@ -8,4 +8,5 @@
 
 [core]
     excludesfile = ~/.gitignore
-	pager = less -S --shift 4
+    pager = less -S --shift 4
+    editor = vim
