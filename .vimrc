@@ -51,6 +51,10 @@ nnoremap <leader>ev :tabe $MYVIMRC<cr>
 " source vim
 nnoremap <leader>sv :source $MYVIMRC<cr>
 
+" navigate using softline with arrows
+noremap <silent> <Up> gk
+noremap <silent> <Down> gj
+
 " Line numbers
 set number
 set relativenumber
@@ -66,7 +70,7 @@ set shiftwidth=1
 set whichwrap+=h,l
 
 " colorscheme
-colorscheme evening
+colorscheme default
 
 " folding
 set foldmethod=indent
@@ -114,7 +118,7 @@ let g:tagbar_compact = 1
 autocmd VimEnter * nested :call tagbar#autoopen(1)
 
 " vim-jedi, hide top-window with doc
-let g:jedi#show_call_signatures = 2
+let g:jedi#show_call_signatures = 0
 let g:jedi#use_tabs_not_buffers = 1
 let g:jedi#smart_auto_mappings = 0
 
