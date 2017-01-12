@@ -69,8 +69,14 @@ set shiftwidth=1
 " h l continues on the previous and next line
 set whichwrap+=h,l
 
-" colorscheme
-colorscheme default
+" colorscheme (default for arch, evening for cashlab03)
+let hostname=$HOSTNAME
+
+if hostname == 'archgio'
+ colorscheme default
+elseif hostname == 'cashlab03'
+ colorscheme evening
+endif
 
 " folding
 set foldmethod=indent
@@ -80,6 +86,10 @@ set nofoldenable
 " smart-case 
 set ignorecase
 set smartcase
+
+" tab in command line
+set wildmenu
+set wildmode=longest,full
 
 " MARKDOWN
 " no spell check for words with underscore (i.e. references)
