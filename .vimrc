@@ -72,11 +72,9 @@ set shiftwidth=1
 set whichwrap+=h,l
 
 " colorscheme (default for arch, evening for cashlab03)
-let hostname=$HOSTNAME
-
-if hostname == 'archgio'
+if hostname() == 'archgio'
  colorscheme default
-elseif hostname == 'cashlab03'
+elseif hostname() == 'cashlab03'
  colorscheme evening
 endif
 
