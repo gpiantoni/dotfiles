@@ -21,6 +21,7 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 
 Plugin 'ivanov/vim-ipython'
+Plugin 'rosenfeld/conque-term'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -70,6 +71,9 @@ set shiftwidth=1
 
 " h l continues on the previous and next line
 set whichwrap+=h,l
+
+nnoremap / /\V
+cnoremap s/ s/\V
 
 " colorscheme (default for arch, evening for cashlab03)
 if hostname() == 'archgio'
