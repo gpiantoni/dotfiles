@@ -1,6 +1,6 @@
 [user]
     email = github@gpiantoni.com
-    name = Gio on Arch
+    name = Gio on ArchXPS
 
 [alias]
     wdiff = diff --color-words -w
@@ -8,6 +8,6 @@
     amend = commit -a --amend --no-edit
 
 [core]
-    excludesfile = ~/.gitignore
+    excludesfile = ~/.gitignore_shared
     pager = less -S --shift 4
     editor = vim
