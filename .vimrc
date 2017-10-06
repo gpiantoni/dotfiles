@@ -14,14 +14,13 @@ Plugin 'ervandew/supertab'
 
 Plugin 'vim-pandoc/vim-pandoc'
 Plugin 'vim-pandoc/vim-pandoc-syntax'
-Plugin 'majutsushi/tagbar'
 Plugin 'tpope/vim-fugitive'
+
+Plugin 'majutsushi/tagbar'
 
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 
-Plugin 'ivanov/vim-ipython'
-Plugin 'rosenfeld/conque-term'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -45,6 +44,9 @@ set encoding=utf-8
 noremap <space> :
 let mapleader=","
 nnoremap <CR> o<Esc>
+
+" use uppercase W as w, when typing fast
+command W w
 
 " select and char/word count
 vnoremap <leader>m g<C-g>:<C-U>echo v:statusmsg<CR>
@@ -78,12 +80,8 @@ set whichwrap+=h,l
 nnoremap / /\V
 cnoremap s/ s/\V
 
-" colorscheme (default for arch, evening for cashlab03)
-if hostname() == 'archgio'
- colorscheme default
-elseif hostname() == 'cashlab03'
- colorscheme evening
-endif
+" colorscheme
+colorscheme default
 
 " folding
 set foldmethod=indent
@@ -121,7 +119,7 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 " keep location list small
 let g:syntastic_loc_list_height = 5
-let g:syntastic_python_checkers = ['python', 'pyflakes']
+let g:syntastic_python_checkers = ['python', 'flake8']
 
 " disable several syntastic flake8 errors
 " E302: too long lines
