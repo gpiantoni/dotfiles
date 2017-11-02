@@ -12,3 +12,5 @@ source ~/.bashrc_secrets
 export R_LIBS_USER=~/tools/R
 
 export PATH=$PATH:~/.local/bin
+
+export PATH=$PATH:~/.gem/ruby/2.4.0/bin
