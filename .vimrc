@@ -143,7 +143,7 @@ autocmd VimEnter * nested :call tagbar#autoopen(1)
 set updatetime=250
 nmap [g <Plug>GitGutterPrevHunk
 nmap ]g <Plug>GitGutterNextHunk
-nmap <Leader>g <Plug>GitGutterStageHunk
+nmap <Leader>s <Plug>GitGutterStageHunk
 nmap <Leader>u <Plug>GitGutterUndoHunk
 " You can jump between hunks with [c and ]c. You can stage and undo hunks with <leader>hs and <leader>hu
 
