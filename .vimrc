@@ -14,7 +14,7 @@ Plugin 'ervandew/supertab'
 
 Plugin 'vim-pandoc/vim-pandoc'
 Plugin 'vim-pandoc/vim-pandoc-syntax'
-Plugin 'tpope/vim-fugitive'
+Plugin 'airblade/vim-gitgutter'
 
 Plugin 'majutsushi/tagbar'
 
@@ -72,7 +72,9 @@ set colorcolumn=
 " make tab appear as two spaces
 set tabstop=2
 " insert one tab at the time
-set shiftwidth=1
+set shiftwidth=4
+" use spaces, not tabs
+set expandtab
 
 " h l continues on the previous and next line
 set whichwrap+=h,l
@@ -119,13 +121,14 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 " keep location list small
 let g:syntastic_loc_list_height = 5
-let g:syntastic_python_checkers = ['python', 'flake8']
+let g:syntastic_python_checkers = ['flake8']
 
 " disable several syntastic flake8 errors
 " E302: too long lines
 " E501: 2 spaces before function def
 " E123: indent
-let g:syntastic_python_flake8_post_args='--ignore=E302,E501,E123'
+" E731: do not assign a lambda expression, use a def
+let g:syntastic_python_flake8_post_args='--ignore=E302,E501,E123,E731'
 
 " TAGBAR:
 nmap <F8> :TagbarToggle<CR>
@@ -136,7 +139,15 @@ let g:tagbar_compact = 1
 " TAGBAR: show it automatically for supported files
 autocmd VimEnter * nested :call tagbar#autoopen(1)
 
-" vim-jedi, hide top-window with doc
+" GITGUTTER: faster updates of the signs
+set updatetime=250
+nmap [g <Plug>GitGutterPrevHunk
+nmap ]g <Plug>GitGutterNextHunk
+nmap <Leader>g <Plug>GitGutterStageHunk
+nmap <Leader>u <Plug>GitGutterUndoHunk
+" You can jump between hunks with [c and ]c. You can stage and undo hunks with <leader>hs and <leader>hu
+
+" VIM-JEDI, hide top-window with doc
 let g:jedi#show_call_signatures = 0
 let g:jedi#use_tabs_not_buffers = 1
 let g:jedi#smart_auto_mappings = 0
