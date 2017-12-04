@@ -8,19 +8,17 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
-Plugin 'davidhalter/jedi-vim'
-Plugin 'scrooloose/syntastic'
-Plugin 'ervandew/supertab'
-
 Plugin 'vim-pandoc/vim-pandoc'
 Plugin 'vim-pandoc/vim-pandoc-syntax'
 Plugin 'airblade/vim-gitgutter'
 
-Plugin 'majutsushi/tagbar'
-
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-
+" install in arch
+" Plugin 'davidhalter/jedi-vim'
+" Plugin 'scrooloose/syntastic'
+" Plugin 'ervandew/supertab'
+" Plugin 'majutsushi/tagbar'
+" Plugin 'vim-airline/vim-airline'
+" Plugin 'vim-airline/vim-airline-themes'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -109,6 +107,9 @@ autocmd BufRead,BufNewFile *.cls setfiletype=tex
 " PYTHON
 " line at 80
 autocmd FileType python setlocal colorcolumn=80
+
+" AIRLINE
+let g:airline_powerline_fonts = 1
 
 " Default options for syntastic
 set statusline+=%#warningmsg#
