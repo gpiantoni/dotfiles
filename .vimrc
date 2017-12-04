@@ -71,14 +71,12 @@ set colorcolumn=
 set tabstop=2
 " insert one tab at the time
 set shiftwidth=4
+autocmd BufRead,BufNewFile *.json set shiftwidth=1
 " use spaces, not tabs
 set expandtab
 
 " h l continues on the previous and next line
 set whichwrap+=h,l
-
-nnoremap / /\V
-cnoremap s/ s/\V
 
 " colorscheme
 colorscheme default
@@ -111,12 +109,15 @@ autocmd FileType python setlocal colorcolumn=80
 " AIRLINE
 let g:airline_powerline_fonts = 1
 
-" Default options for syntastic
+" SYNTASTIC
+" jump to errors
+noremap <silent> [e :lprev<CR>
+noremap <silent> ]e :lnext<CR>
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
-let g:syntastic_always_populate_loc_list = 0
+let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
@@ -127,6 +128,11 @@ let g:syntastic_python_checkers = ['flake8']
 " disable several syntastic flake8 errors
 " E302: too long lines
 " E501: 2 spaces before function def
+
+" syntastic: rst
+let g:syntastic_rst_checkers = ['sphinx']
+
+" syntastic: Python
 " E123: indent
 " E731: do not assign a lambda expression, use a def
 let g:syntastic_python_flake8_post_args='--ignore=E302,E501,E123,E731'
@@ -144,9 +150,9 @@ autocmd VimEnter * nested :call tagbar#autoopen(1)
 set updatetime=250
 nmap [g <Plug>GitGutterPrevHunk
 nmap ]g <Plug>GitGutterNextHunk
-nmap <Leader>s <Plug>GitGutterStageHunk
+nmap <Leader>g <Plug>GitGutterStageHunk
 nmap <Leader>u <Plug>GitGutterUndoHunk
-" You can jump between hunks with [c and ]c. You can stage and undo hunks with <leader>hs and <leader>hu
+" You can jump between hunks with [g and ]g. You can stage and undo hunks with <leader>hs and <leader>hu
 
 " VIM-JEDI, hide top-window with doc
 let g:jedi#show_call_signatures = 0
