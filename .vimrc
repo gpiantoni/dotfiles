@@ -38,6 +38,9 @@ autocmd VimEnter * AirlineToggleWhitespace
 " Set encoding
 set encoding=utf-8
 
+" use system-wide clipboard
+set clipboard=unnamedplus
+
 " SHORTCUTS
 noremap <space> :
 let mapleader=","
@@ -72,6 +75,7 @@ set tabstop=2
 " insert one tab at the time
 set shiftwidth=4
 autocmd BufRead,BufNewFile *.json set shiftwidth=1
+autocmd BufRead,BufNewFile *.yml set shiftwidth=2
 " use spaces, not tabs
 set expandtab
 
