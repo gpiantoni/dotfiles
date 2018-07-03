@@ -13,4 +13,6 @@ export R_LIBS_USER=~/tools/R
 
 export PATH=$PATH:~/.local/bin
 
-export PATH=$PATH:~/.gem/ruby/2.4.0/bin
+export PATH=$PATH:~/.gem/ruby/2.5.0/bin
+
+alias wc="youtube-dl PLCGIzmTE4d0hww7NG9ytmooEUZov2k-23 -i --playlist-start 31"
