@@ -29,6 +29,11 @@ filetype plugin indent on    " required
 " :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
 " :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
 "
+" LILYPOND
+filetype off
+set runtimepath+=/usr/share/vim/vimfiles/ftplugin/lilypond.vim
+filetype on
+
 " Put your non-Plugin stuff after this line
 syntax on
 " always show the statusbar (for airline to work)
@@ -110,6 +115,7 @@ autocmd BufRead,BufNewFile *.cls setfiletype=tex
 " line at 80
 autocmd FileType python setlocal colorcolumn=80
 
+
 " AIRLINE
 let g:airline_powerline_fonts = 1
 
@@ -139,7 +145,8 @@ let g:syntastic_rst_checkers = ['sphinx']
 " syntastic: Python
 " E123: indent
 " E731: do not assign a lambda expression, use a def
-let g:syntastic_python_flake8_post_args='--ignore=E302,E501,E123,E731'
+" W503: line break before binary operator
+let g:syntastic_python_flake8_post_args='--ignore=E302,E501,E123,E731,W503'
 
 " TAGBAR:
 nmap <F8> :TagbarToggle<CR>
