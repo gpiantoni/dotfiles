@@ -12,6 +12,10 @@ Plugin 'vim-pandoc/vim-pandoc'
 Plugin 'vim-pandoc/vim-pandoc-syntax'
 Plugin 'airblade/vim-gitgutter'
 
+Plugin 'mechatroner/rainbow_csv'
+
+Plugin 'tckmn/vim-xsami'
+
 " install in arch
 " Plugin 'davidhalter/jedi-vim'
 " Plugin 'scrooloose/syntastic'
@@ -79,7 +83,7 @@ set colorcolumn=
 set tabstop=2
 " insert one tab at the time
 set shiftwidth=4
-autocmd BufRead,BufNewFile *.json set shiftwidth=1
+autocmd BufRead,BufNewFile *.json set shiftwidth=2
 autocmd BufRead,BufNewFile *.yml set shiftwidth=2
 " use spaces, not tabs
 set expandtab

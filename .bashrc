@@ -21,3 +21,6 @@ export PATH=~/tools/DesktopTelematico:$PATH
 
 alias chesstempo=~/tools/chesstempo/import_chesstempo.py
 alias economist=~/tools/economist/economist.py
+
+# WINE32
+export WINEARCH=win32
