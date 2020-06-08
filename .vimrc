@@ -185,9 +185,6 @@ endfun
 
 autocmd FileType python autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
 
-" open epub as zip files
-autocmd BufReadCmd *.epub,*.kepub call zip#Browse(expand("<amatch>"))
-
 let g:SuperTabDefaultCompletionType = "context"
 let g:SuperTabContextDefaultCompletionType = "<c-x><c-o>"
 let g:pandoc#modules#disabled = ["chdir", "hypertext"]
