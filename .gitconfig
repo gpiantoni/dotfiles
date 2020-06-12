@@ -4,7 +4,7 @@
 
 [alias]
     wdiff = diff --color-words -w
-    tree = log --graph --pretty='%C(yellow)%t%Creset%x09%C(cyan)%ad%C(reset) %C(auto)%d%C(reset) %s' --date=local --all
+	tree = log --graph --pretty='%C(yellow)%t%C(reset)%x09%C(magenta)%an%C(reset)%x09%x09%C(cyan)%ad%C(reset) %C(auto)%d%C(reset) %s' --date=local --all
     amend = commit -a --amend --no-edit
 
 [core]
