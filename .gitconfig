@@ -18,3 +18,9 @@
 	required = true
 [pull]
 	ff = only
+[pack]
+	windowMemory = 100m
+	packSizeLimit = 100m
+	threads = 1
+[merge]
+	commit = no
