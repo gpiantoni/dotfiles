@@ -24,3 +24,5 @@
 	threads = 1
 [merge]
 	commit = no
+[push]
+	default = simple
