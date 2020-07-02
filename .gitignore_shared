@@ -8,3 +8,6 @@ tags
 # python
 __pycache__/
 *.egg-info/
+*.ipynb
+.ipynb_checkpoints/
+.coverage
