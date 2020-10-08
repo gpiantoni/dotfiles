@@ -26,3 +26,7 @@
 	commit = no
 [push]
 	default = simple
+[sendpack]
+	sideband = false
+[http]
+	postBuffer = 524288000
