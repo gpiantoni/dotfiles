@@ -8,15 +8,12 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
-Plugin 'vim-pandoc/vim-pandoc'
-Plugin 'vim-pandoc/vim-pandoc-syntax'
-Plugin 'airblade/vim-gitgutter'
-
 Plugin 'mechatroner/rainbow_csv'
 
-Plugin 'tckmn/vim-xsami'
-
 " install in arch
+" pacman -Sy vim-jedi vim-syntastic vim-syntastic vim-tagbar vim-airline vim-airline-themes vim-gitgutter vim-coverage-highlight powerline-fonts
+" 
+" Plugin 'airblade/vim-gitgutter'
 " Plugin 'davidhalter/jedi-vim'
 " Plugin 'scrooloose/syntastic'
 " Plugin 'ervandew/supertab'
@@ -33,10 +30,6 @@ filetype plugin indent on    " required
 " :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
 " :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
 "
-" LILYPOND
-filetype off
-set runtimepath+=/usr/share/vim/vimfiles/ftplugin/lilypond.vim
-filetype on
 
 " Put your non-Plugin stuff after this line
 syntax on
@@ -187,9 +180,6 @@ autocmd FileType python autocmd BufWritePre <buffer> :call <SID>StripTrailingWhi
 
 let g:SuperTabDefaultCompletionType = "context"
 let g:SuperTabContextDefaultCompletionType = "<c-x><c-o>"
-let g:pandoc#modules#disabled = ["chdir", "hypertext"]
-let g:pandoc#toc#close_after_navigating = 0
-let g:pandoc#biblio#bibs = ['/home/gio/Documents/articles/package/md2docx/var/bib/library_fixed.bib']
 
 " TO CLEANUP XML: %s/></>\r</g
 " THEN: gg=G
