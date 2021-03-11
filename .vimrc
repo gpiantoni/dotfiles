@@ -48,6 +48,10 @@ noremap <space> :
 let mapleader=","
 nnoremap <CR> o<Esc>
 
+" type twice - to print n-dash
+inoremap <buffer> --<space> –<space>
+inoremap <buffer> -- —
+
 " use uppercase W as w, when typing fast
 command W w
 
@@ -102,6 +106,7 @@ set wildmode=longest,full
 
 " MARKDOWN
 " no spell check for words with underscore (i.e. references)
+autocmd BufRead,BufNewFile *.md setlocal spell spelllang=en_us
 autocmd BufRead,BufNewFile *.md syntax match String /\w\+_\w\+/ contains=@NoSpell
 
 " LATEX CLS FILES
