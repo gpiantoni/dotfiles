@@ -26,5 +26,6 @@ alias economist=~/tools/economist/economist.py
 export WINEARCH=win32
 
 here () {
+  mkdir /home/gio/projects/$1 -p
   rsync -aPW stein:/Fridge/users/giovanni/projects/$1 /home/gio/projects/$1
 }
