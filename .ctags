@@ -1,4 +1,0 @@
---langdef=markdown
---langmap=markdown:.mkd
---regex-markdown=/^#[ \t]+(.*)/\1/h,Title/
---regex-markdown=/^##(.*)/\1/i,Section/

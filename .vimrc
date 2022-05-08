@@ -11,7 +11,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'mechatroner/rainbow_csv'
 
 " install in arch
-" pacman -Sy vim-jedi vim-syntastic vim-syntastic vim-tagbar vim-airline vim-airline-themes vim-gitgutter vim-coverage-highlight powerline-fonts
+" pacman -Sy vim-jedi vim-syntastic vim-syntastic vim-tagbar vim-airline vim-airline-themes vim-gitgutter vim-coverage-highlight powerline-fonts vim-supertab
 " 
 " Plugin 'airblade/vim-gitgutter'
 " Plugin 'davidhalter/jedi-vim'
