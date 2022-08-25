@@ -13,14 +13,14 @@ export R_LIBS_USER=~/tools/R
 
 export PATH=$PATH:~/.local/bin
 
-export PATH=$PATH:~/.gem/ruby/2.5.0/bin
+# kepubify
+export PATH=$PATH:~/tools/economist/bin/
 
 # Tasse
 export PATH=~/tools/icedtea-web/bin:$PATH
 export PATH=~/tools/DesktopTelematico:$PATH
 
 alias chesstempo=~/tools/chesstempo/import_chesstempo.py
-alias economist=~/tools/economist/economist.py
 
 # WINE32
 export WINEARCH=win32

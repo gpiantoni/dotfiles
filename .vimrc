@@ -161,10 +161,10 @@ autocmd VimEnter * nested :call tagbar#autoopen(1)
 
 " GITGUTTER: faster updates of the signs
 set updatetime=250
-nmap [g <Plug>GitGutterPrevHunk
-nmap ]g <Plug>GitGutterNextHunk
-nmap <Leader>g <Plug>GitGutterStageHunk
-nmap <Leader>u <Plug>GitGutterUndoHunk
+nmap [g <Plug>(GitGutterPrevHunk)
+nmap ]g <Plug>(GitGutterNextHunk)
+nmap <Leader>g <Plug>(GitGutterStageHunk)
+nmap <Leader>u <Plug>(GitGutterUndoHunk)
 " You can jump between hunks with [g and ]g. You can stage and undo hunks with <leader>hs and <leader>hu
 
 " VIM-JEDI, hide top-window with doc
