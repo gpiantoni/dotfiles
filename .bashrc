@@ -29,3 +29,7 @@ here () {
   mkdir /home/gio/projects/$1 -p
   rsync -aPW stein:/Fridge/users/giovanni/projects/$1 /home/gio/projects/$1
 }
+
+nfs () {
+    rsync --recursive -vv --delete --filter="protect /.well-known" --exclude '.git'  /home/gio/Dropbox/Docs/website/ gpiantoni:/home/public/
+}
