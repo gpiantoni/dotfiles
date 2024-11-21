@@ -14,7 +14,7 @@ export R_LIBS_USER=~/tools/R
 export PATH=$PATH:~/.local/bin
 
 # kepubify
-export PATH=$PATH:~/tools/economist/bin/
+export PATH=$PATH:~/tools/economist/bin/:~/tools/output_kepub/
 
 # Tasse
 export PATH=~/tools/icedtea-web/bin:$PATH
@@ -29,3 +29,5 @@ here () {
   mkdir /home/gio/projects/$1 -p
   rsync -aPW stein:/Fridge/users/giovanni/projects/$1 /home/gio/projects/$1
 }
+
+setxkbmap -layout us,gr -option grp:alt_shift_toggle
